@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gentlemen Perfume's</title>
+     <link rel="stylesheet" href=>
+     <link href="Designs.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler" class="fas fa-bars"></label>
+        <a href="#" class="logo">Gentlemen Perfume's</a>
+        <nav class="navbar">
+            <a href="INDEX.html">HOME</a>
+            <a href="ABOUT.html">ABOUT</a>
+            <a href="Perfumes.html">PRODUCTS</a> 
+            <a href="CONTACT.html">CONTACT</a> 
+        </nav>
+
+    </header>
+<section class="products" id="products">
+    <h1 class="heading">Products</span></h1>
+    <div class="box-container">
+        <div class="box">
+            <div class="image">
+                <img src="scent 1.png" alt="">
+                <div class="icons">
+                    <a href="#" class="cart-btn" onclick="addToCart('Silent Storm', 750.99)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Silent Storm</h3>
+                <div class="price">₱750.99</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="scent 2.png" alt="">
+                <div class="icons">  
+                    <a href="#" class="cart-btn" onclick="addToCart('Purity air', 650.99)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Purity air</h3>
+                <div class="price">₱650.99</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="scent 3.png" alt="">
+                <div class="icons"> 
+                    <a href="#" class="cart-btn" onclick="addToCart('Ocean blue', 899.99)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Ocean blue</h3>
+                <div class="price">₱899.99</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="scent 4.png" alt="">
+                <div class="icons">      
+                    <a href="#" class="cart-btn" onclick="addToCart('Nightfall Eclipse', 599.99)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Nightfall Eclipse</h3>
+                <div class="price">₱599.99</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="scent 5.png" alt="">
+                <div class="icons">
+                    <a href="#" class="cart-btn" onclick="addToCart('Lumiere Aura', 650.99)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Lumiere Aura</h3>
+                <div class="price">₱650.99</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="scent 6.png" alt="">
+                <div class="icons">
+                    <a href="#" class="cart-btn" onclick="addToCart('Kiss Of Fire', 600.99)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Kiss Of Fire</h3>
+                <div class="price">₱600.99</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="scent 7.png" alt="">
+                <div class="icons">
+                    <a href="#" class="cart-btn" onclick="addToCart('Ruby Ray', 700.99)">Add to Cart</a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>Ruby Ray</h3>
+                <div class="price">₱700.99</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div id="cart-container">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">
+        </ul>
+        <p>Total: ₱<span id="cart-total">0</span></p>
+        <button onclick="checkout()">Checkout</button>
+        <button onclick="clearCart()">Clear Cart</button>
+    </div>
+
+    <script>
+        let cart = [];
+        let cartTotal = 0;
+
+        function addToCart(itemName, itemPrice) {
+            cart.push({ name: itemName, price: itemPrice });
+            cartTotal += itemPrice;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById("cart-items");
+            const cartTotalElement = document.getElementById("cart-total");
+            cartItems.innerHTML = "";
+            cart.forEach((item) => {
+                const li = document.createElement("li");
+                li.textContent = `${item.name} - ₱${item.price}`;
+                cartItems.appendChild(li);
+            });
+            cartTotalElement.textContent = cartTotal.toFixed(2);
+        }
+
+        function checkout() {
+            alert(`Total: ₱${cartTotal.toFixed(2)}\nThank you for your purchase!`);
+        }
+
+        function clearCart() {
+            cart = [];
+            cartTotal = 0;
+            updateCart();
+        }
+    </script>
+
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>QUICK LINKS</h3>
+            <a href="INDEX.html">Home</a>
+            <a href="ABOUT.html">About Us</a>
+            <a href="Perfumes.html">Products</a>
+            <a href="CONTACT.html">Contact Us</a>           
+        </div>
+
+        <div class="box">
+            <h3>CONTACT INFO</h3>
+            <a href="https://www.viber.com/en/">+63 912 345 6789</a>
+            <a href="https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1">gentlemenperfume@gmail.com</a>
+            <a href="https://maps.app.goo.gl/tXDMFYbMmBzapLzD7">Ermita Manila, 1000 Metro Manila</a>
+          <img src="images/payment.png" alt="">
+       
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
